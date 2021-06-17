@@ -1,0 +1,17 @@
+.navbar {
+    height: 100px;
+    text-align: center;
+}
+
+.navbar h2{
+	left: 10%;
+}
+
+.navbar select{
+	left: 10%;
+	top: 75px;
+}
+
+.tela{
+	margin-top: 120px;
+}

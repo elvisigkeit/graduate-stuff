@@ -1,0 +1,8 @@
+Objetivo: implementar fatoração LU
+
+-Abrir o arquivo com a eliminação de Gauss-Jordan e o renomear
+-Apagar os trechos que envolvem a manibulação do vetor 'b' e também o trecho que "zera os elementos acima dos pivôs"
+-Chamar a matriz "A" no final do código de "U"
+-No início do código, após a entrada da matriz A, crie uma matriz L da seguinte forma: L = zeros(m,n);
+-Ao longo do programa, sempre que você encontrar o p-ésimo pivô, armazene seu valor na diagonal de L: L(p,p) = pivo;
+-Ao longo do programa, sempre que você identificar um elemento que está abaixo do pivô e deve zerar, guarde o valor na mesma posição da matriz L: L(r, colunap) = A(r, colunap);

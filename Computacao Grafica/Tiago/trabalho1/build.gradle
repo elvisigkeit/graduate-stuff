@@ -1,0 +1,33 @@
+apply plugin : 'cpp'
+
+model {
+  components {
+    main(NativeExecutableSpec){
+      sources {
+        cpp {
+          source {
+            srcDirs "src/main", "src/shared/c++"
+            include "**/*.cpp"
+          }
+          exportedHeaders {
+            srcDirs "src/main/include", "src/shared/include"
+          }
+        }
+      }
+
+      binaries.all {
+        if (toolChain in Gcc) {
+          cppCompiler.args "-O2", "-lGL", "-lGLU", "-lglut"
+          linker.args "-lGL", "-lGLU", "-lglut"
+        }
+      }
+    }
+  }
+}
+
+task run (type:Exec){
+  workingDir './build/exe/main'
+  commandLine './main'
+}
+
+build.finalizedBy(run)

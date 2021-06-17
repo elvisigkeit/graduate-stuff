@@ -1,0 +1,23 @@
+grafo 1:
+A B C
+A B
+A C
+B C
+
+grafo 3:
+A B C D E F G
+A B
+A C
+A E
+B C
+C D
+E F
+E G
+F G
+
+grafo 2:
+A B C D
+A B
+A C
+B C
+C D

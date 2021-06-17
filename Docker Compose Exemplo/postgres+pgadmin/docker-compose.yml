@@ -1,0 +1,30 @@
+version: '2'
+services:
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: m3r3nd1nh4
+      POSTGRES_USER: adm
+      PGDATA: /data/postgres
+    volumes:
+    - pgdb-volume:/data/postgres
+    ports:
+    - 5432:5432
+    networks:
+    - postgres
+  
+  pgadmin:
+    image: fenglc/pgadmin4
+    volumes:
+    - pgdb-volume:/root/.pgadmin
+    ports:
+    - 5050:5050
+    networks:
+    - postgres
+
+volumes:
+  pgdb-volume:
+
+networks:
+  postgres:
+    driver: bridge

@@ -1,0 +1,10 @@
+Regras de anti-spam
+	Black|White list
+	Palavras chave -Sale, Free, sex
+	Quantidade de emails enviados
+	links
+	retorno de cada e-mail
+
+-Um loop inteiro rodando e:
+	separando o email todo em frases chave
+	fazendo a contagem de palavras e links chave

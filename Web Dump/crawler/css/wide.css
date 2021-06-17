@@ -1,0 +1,19 @@
+.navbar {
+	height: 80px;
+}
+
+.navbar h2{
+	left: 20%;
+}
+
+.navbar select{
+	left: 60%;
+	top: 15px;
+}
+
+.tela {
+	display: grid;
+	grid-template-columns: 20% 60% 20%;
+	grid-template-areas: 'left center right';
+	margin-top: 90px;
+}

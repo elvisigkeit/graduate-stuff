@@ -1,0 +1,534 @@
+@import url(http://storage.live.com/items/4A07C1EEED420167%21165);
+@import url(http://fonts.googleapis.com/css?family=Orbitron:500);
+@import url(https://malcat-gen.appspot.com/series?preset=more);
+
+/* FONT*/
+ 
+@font-face {
+        font-family: 'myAnimeFont';
+        src: url(https://copy.com/8repeIKbT2yGSvKM/Xolonium-Bold.otf);
+}
+
+/* BACKGROUND */
+body {
+        background-image: url(http://i.imgur.com/BHBKvfq.jpg) !important;
+}
+
+/* IMAGE BEHIND TOP BAR */
+#inlineContent {
+        background: url(http://i.imgur.com/PdMBBrW.png) no-repeat !important;
+}
+
+
+/* TABLE COLOR */
+#list_surround {
+        border: 4px solid black;
+        border-radius: 12px;
+        background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+/* FONT COLORS */
+a {
+        color: #06F; 
+}
+
+.td1 a, .td2 a { 
+        color: white;
+}
+
+a:hover {
+        color: white;
+}
+
+
+/* CHARACTER ON LEFT (optional)
+Add character renders after background.
+Move them into view or from left to right with the left percentage code. 
+*/
+body:before {
+background: url() no-repeat !important;
+left: -25% !important;
+height: 90% !important;
+}
+
+/* CHARACTER ON RIGHT (optional)
+Add character renders after background.
+Move them into view or from left to right with the right percentage code. */
+body:after {
+background: url() no-repeat !important;
+right: -60% !important;
+height: 100% !important;
+}
+
+
+
+
+/* XXXXXXXXXX OTHER CODES XXXXXXXXXX */
+
+body {
+        font-size: 11px;
+        font-family: 'myAnimeFont', orbitron;
+        background-image: url(http://i.imgur.com/BHBKvfq.jpg);
+        background-position: no-repeat;
+        background-attachment: fixed;
+        color: white;
+        background-size: cover;
+}
+
+body:before {
+content: "" !important;
+width: 100% !important;
+position: fixed !important;
+bottom: 0;
+display: block !important;
+background-repeat: no-repeat;
+background-position: left bottom;
+background-size: contain !important;
+z-index: -1;  
+}
+
+body:after {
+content: "" !important;
+width: 100% !important;
+position: fixed !important;
+bottom: 0;
+display: block !important;
+background-repeat: no-repeat;
+background-size: contain !important;
+background-position: right bottom;
+z-index: -1;  
+}
+
+
+a {
+        text-decoration: none; }
+
+#inlineContent {
+        display: block !important;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        height: 210px;
+        width: 100%;
+        background: url(http://i.imgur.com/PdMBBrW.png) no-repeat;
+        background-size: 100%;
+        z-index: 1;
+}
+
+#list_surround {
+        width: 1025px;
+        margin: 156px auto 44px;
+        padding: 11px;
+        border: 4px solid black;
+        border-radius: 12px;
+        background-color: rgba(255, 255, 255, 0.1);
+}
+
+#list_surround br {
+display: none;
+}
+
+
+/* XXXXXXXXXX SORT ANIME XXXXXXXXXX */
+
+#list_surround:nth-of-type(n+4) ~ .header_cw + tab\le,
+#list_surround:nth-of-type(n+4) ~ .header_completed + tab\le,
+#list_surround:nth-of-type(n+4) ~ .header_onhold + tab\le,
+#list_surround:nth-of-type(n+4) ~ .header_dropped + tab\le,
+#list_surround:nth-of-type(n+4) ~ .header_ptw + tab\le {
+        display: none;
+}
+
+#list_surround tab\le:nth-child(6)  {
+        display: block;
+        position: fixed;
+        padding-right: 40px;
+        z-index: 3;
+        overflow: hidden;
+        top: 0px;
+        height: 40px;
+        width: 0px;
+        left: 50%;
+        margin-left: 493px;
+        line-height: 0px;
+        background: url(http://i.imgur.com/jjSLP4w.png) no-repeat;
+        background-position: 0px 6px;
+}       
+
+#list_surround tab\le:nth-child(6):hover  {
+        height: 170px;
+        width: 160px;
+        background-position: 0px -34px;
+}
+
+
+.table_header {
+        display: block;
+        width: 96px;
+}
+ 
+.table_header:first-of-type, .table_header:nth-of-type(n+6) {
+        display: none;
+}
+ 
+.table_headerLink {
+        display: block;
+        height: 30px;
+        text-align: center;
+        width: 96px;
+        border: 2px solid black;
+        border-radius: 5px;
+        font-size: 13px;
+        line-height: 30px;
+        margin: 6px;
+        margin-left: 52px;
+        margin-bottom: 0px;
+        z-index: 3;
+        text-shadow:
+     -1px -1px 0 #000,  
+      1px -1px 0 #000,
+     -1px 1px 0 #000,
+      1px 1px 0 #000;  
+        background: rgba(255, 255, 255, 0.1);
+}
+ 
+.table_headerLink:hover {
+        box-shadow: 0px 0px 15px 5px rgba(255, 255, 255, 0.8);
+}       
+
+
+
+#list_surround tab\le:nth-child(6) tbodytd:nth-child(5) strong a {
+        margin-right: 0px !important;
+}
+ 
+/* XXXXXXXXXX CATEGORIES XXXXXXXXXX */
+ 
+#list_surround tab\le:first-of-type {
+        position: fixed;
+        top: 0px;
+        left: 50%;
+        margin-left: -8px;
+        width: auto;
+        height: 46px;
+        font-size: 13px;
+        font-weight: bold;
+        z-index: 3;
+}
+
+.status_selected:nth-child(3), .status_not_selected:nth-child(3) {
+        display: none;
+}
+ 
+.status_selected, .status_not_selected {
+        width: 70px;
+        white-space: nowrap;
+}
+ 
+.status_selected a, .status_not_selected a {
+        display: block;
+        padding: 0px;
+        height: 30px;
+        line-height: 30px;
+        width: 90px;
+        border: 2px solid black;
+        border-radius: 5px;
+        margin-right: 3px;
+        margin-left: 3px;
+        overflow: hidden;
+        text-shadow:
+     -1px -1px 0 #000,  
+      1px -1px 0 #000,
+     -1px 1px 0 #000,
+      1px 1px 0 #000;
+}
+ 
+.status_selected:nth-child(1) a:before, .status_not_selected:nth-child(1) a:before {
+        content: '\00a0\00a0Watching\00a0\00a0';
+}
+ 
+.status_selected:nth-child(5) a:before, .status_not_selected:nth-child(5) a:before {
+        content: '\00a0\00a0 To Watch\00a0\00a0';
+}
+ 
+.status_selected a:hover, .status_not_selected a:hover {
+        box-shadow: 0px 0px 15px 5px rgba(255, 255, 255, 0.8);
+}      
+ 
+.status_selected a {
+        color: white;
+}      
+ 
+/* XXXXXXXXXX HEADERS XXXXXXXXXX */
+
+.header_cw, .header_completed, .header_onhold,
+.header_dropped, .header_ptw {
+        clear: both;
+        position: relative;
+        top: 20px;
+        margin: 0px 0px 42px 0px;
+        padding: 11px 0px;
+}
+ 
+.header_title {
+        font-size: 26px;
+        font-weight: bold;
+        text-align: center;
+        text-transform:uppercase;
+        text-shadow:
+     -2px -2px 0 #000,  
+      2px -2px 0 #000,
+     -2px 2px 0 #000,
+      2px 2px 0 #000;  
+}
+
+/* XXXXXXXXXX ANIME COVERS (.HIDE) + CONTAINERS XXXXXXXXXX */
+
+#list_surround tab\le:nth-of-type(n+4):not(.header_cw):not(.header_completed):not(.header_onhold):not(.header_dropped):not(.header_ptw),
+.hide {
+        float: left;
+        position: relative;
+        width: 183px;
+        height: 249px;
+        margin: 11px;
+        border-radius: 6px;
+}
+ 
+#list_surround tab\le:nth-of-type(n+4):not(.header_cw):not(.header_completed):not(.header_onhold):not(.header_dropped):not(.header_ptw) {
+        z-index: 1;
+}
+
+
+.hide {
+        display: block !important;
+        margin-left: -194px;
+        background-size: cover;
+        background-position: center;
+        border-radius: 6px;
+        box-shadow: 0px 0px 15px 5px rgb(0, 0, 0) inset;
+}
+ 
+#list_surround tab\le:nth-of-type(n+4):not(.header_cw):not(.header_completed):not(.header_onhold):not(.header_dropped):not(.header_ptw):hover {
+        box-shadow: 0px 0px 20px 8px rgba(255, 255, 255, 0.8);
+}
+
+
+.td1, .td2 {
+        position: absolute;
+        padding: 4px 7px;
+}
+ 
+.td1:nth-of-type(2), .td2:nth-of-type(2) {
+        visibility: hidden;
+        padding: 0px;
+        width: 100%;
+        height: 100%;
+}
+ 
+.td1:first-of-type, .td2:first-of-type {
+        display: none;
+}
+ 
+.td1, .td2, .td1 a + small, .td2 a + small, .animetitle {
+        background-color: rgba(0, 0, 0, 0.7);
+        border: 1px solid black;
+        border-radius: 3px;
+        color: white;
+        text-shadow:
+     -1px -1px 0 #000,  
+      1px -1px 0 #000,
+     -1px 1px 0 #000,
+      1px 1px 0 #000;
+}
+ 
+/* XXXXXXXXXX AIRING / REWATCHING XXXXXXXXXX */
+
+
+.td1 a[title="Anime Information"] + small, .td2 a[title="Anime Information"] + small {
+        display: block;
+        visibility: visible;
+        position: absolute;
+        top: 26px;
+        right: 68px;
+        width: auto;
+        padding: 4px 7px;
+        height: 8px;
+        line-height: 8px;
+        text-align: center;
+        word-wrap: break-word;
+}
+ 
+/* XXXXXXXXXX TYPE XXXXXXXXXX */
+ 
+.td1:nth-of-type(4)[width="50"], .td2:nth-of-type(4)[width="50"] {
+        top: 27px;
+        left: 6px;
+        width: auto;
+        height: 8px;
+        line-height: 8px;
+}
+ 
+/* XXXXXXXXXX ANIME TITLE XXXXXXXXXX */
+ 
+.animetitle {
+        display: block;
+        visibility: visible;
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+        padding: 5px;
+        width: 173px;
+        max-height: 32px;
+        line-height: 12px;
+        overflow: hidden;
+        text-align: center;
+        font-size: 12px;
+        color: rgb(0, 102, 255) !important;
+}
+ 
+.animetitle:hover {
+        color: white !important;
+}
+ 
+/* XXXXXXXXXX SCORE XXXXXXXXXX */
+ 
+.td1:nth-of-type(3), .td2:nth-of-type(3) {
+        top: 6px;
+        right: 6px;
+        width: 45px;
+        height: 37px;
+        padding: 0px;
+        text-align: center;
+        font-size: 24px;
+}
+ 
+.td1:nth-of-type(3) a, .td2:nth-of-type(3) a {
+        display: block;
+        width: 100%;
+        height: 100%;
+}
+ 
+.td1:nth-of-type(3) a span, .td2:nth-of-type(3) a span {
+        display: block;
+        height: 37px;
+        text-align: center;
+        line-height: 37px;
+}
+ 
+/* XXXXXXXXXX EPISODES XXXXXXXXXX */
+ 
+td[width="50"] + .td1:nth-of-type(5):before, [width="50"] + .td2:nth-of-type(5):before {
+        content: "Ep: ";
+}
+ 
+td[width="50"] + .td1:nth-of-type(5), td[width="50"] + .td2:nth-of-type(5) {
+        left: 6px;
+        top: 6px;
+        width: auto;
+        text-align: right;
+        height: 8px;
+        line-height: 8px;
+}
+ 
+/* XXXXXXXXXX TAGS AND OTHER STUFF XXXXXXXXXX */
+
+
+.td1:nth-of-type(n+6), .td2:nth-of-type(n+6) {
+        display: none;
+}
+ 
+#list_surround tab\le:hover .td1[width="125"],
+#list_surround tab\le:hover .td2[width="125"] {
+        display: none;
+}
+
+
+/* XXXXXXXXXX BOX THAT SHOWS UP WHEN YOU CLICK ON SCORE / EPISODES XXXXXXXXXX */
+ 
+input[type=text] {
+        width: 100%;
+        text-align: right;
+        border: none;
+}
+ 
+/* XXXXXXXXXX "GO" BUTTON (JUST PRESS ENTER) XXXXXXXXXX */
+ 
+input[value=Go] {
+        display: none;
+}
+ 
+/* XXXXXXXXXX EDIT ANIME INFO (COVERS THE ANIME PICTURE) XXXXXXXXXX*/
+ 
+.List_LightBox {
+        display: block;
+        visibility: visible;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 181px;
+        height: 247px;
+        font-size: 0px;
+        border: 2px solid black;
+        border-radius: 6px;
+       
+}
+
+#copyright:after {content: "Google 'Shishio's Custom Lists' for more help or to get this layout!";
+}
+ 
+.category_totals {
+        position: absolute;
+        height: 247px;
+        width: 119px;
+        padding: 0px 31px;
+        text-align: center;
+        white-space: pre-line;
+        border-radius: 6px;
+        line-height: 14px;
+        border: 2px solid black;
+        background-color: rgba(0, 0, 0, 0.7);
+        font-size: 12px;
+        text-shadow:
+     -1px -1px 0 #000,  
+      1px -1px 0 #000,
+     -1px 1px 0 #000,
+      1px 1px 0 #000;  
+}
+ 
+.category_totals:before {
+        display: block;
+        content: "Totals:";
+        text-align: center;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 60px;
+        text-shadow:
+     -1px -1px 0 #000,  
+      1px -1px 0 #000,
+     -1px 1px 0 #000,
+      1px 1px 0 #000;  
+}
+ 
+#grand_totals {
+        font-size: 12px;
+}
+ 
+#grand_totals, #copyright {
+        clear: both;
+        position: relative;
+        top: 20px;
+        text-align: center;
+        text-shadow:
+     -1px -1px 0 #000,  
+      1px -1px 0 #000,
+     -1px 1px 0 #000,
+      1px 1px 0 #000;  
+}
+ 
+#copyright {
+        padding: 11px 0px;
+        text-align: center;
+        margin-top: 0px !important;
+        margin-bottom: 20px;
+}

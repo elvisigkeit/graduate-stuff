@@ -1,0 +1,4 @@
+Data       Hora       Origem     Destino    Quantidade 
+   01/12/1710:31:32 AMRede       A0003                1
+   01/12/1710:31:37 AMRede       A0002                1
+   01/12/1710:32:00 AMA0002      A0003              0.5

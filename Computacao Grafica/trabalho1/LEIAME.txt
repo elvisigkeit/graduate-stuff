@@ -1,0 +1,8 @@
+- Descrição do nome do código do programa:
+	linhasConcorrentes é o nome do codigo fonte principal, as versões 0.1 e 0.2 são intermediarias.
+
+- Programa usado foi o Dev-C++ 5
+
+-Oo aplicativo compilado tambem se encontra na pasta.
+
+-Aluno: Elvis Nobrega DRE:114186283

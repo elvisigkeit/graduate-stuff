@@ -1,0 +1,148 @@
+Aluno: Elvis Nobrega
+DRE  : 116011484
+
+1 - 
+	Pegue um vértice V qualquer
+	Coloque-o na raiz da árvore e defina ele mesmo como seu pai
+	Marque-o
+
+	Para cada vizinho de V:
+		Coloque numa pilha de adjacentes P
+		Defina pai de V como sendo a raiz da árvore
+	
+	Para cada vértice T do topo da pilha P:
+		Se T não estiver marcado:
+			Marque-o
+			Crie um nó na arvore filho de seu pai
+			Para cada vértice adjacente A:
+				Se A não tiver pai:
+					Defina pai de A como sendo T
+					Coloque na pilha de adjacentes P
+
+	Retorne a árvore
+
+2 -
+	//Ser ponte significa não estar num ciclo
+	Pegue um vértice V qualquer
+	Anotar a si mesmo como low
+	Anotar o grau de entrada como sendo 1
+	Setar o grau de entrada 'global' como 2
+
+	Para cada vizinho A de V:
+		Visita_Vertice(V, A, grau_entrada, Aresta entre A e V)
+	
+
+
+
+Visita_Vertice(Vertice Pai, Vertice V, grau_entrada, Aresta A):
+	Se V já tiver grau de entrada:
+		Marca A como não ponte
+		Se low do Pai tiver grau de entrada maior:
+			Anota novo low como sendo V
+		Fecha funcao
+	
+	Anota o grau de entrada atual como sendo grau_entrada
+	Soma 1 no grau_entrada
+	Anota a si mesmo como sendo low
+
+	Para cada vizinho P de V:
+		Visita_Vertice(V, P, grau_entrada, Aresta entre P e V)
+		Se low do filho tiver grau de entrada menor:
+			Recebe o low do filho
+			Anota aresta entre eles como não ponte
+
+	Se low atual for diferente de V:
+		Marca A como não ponte
+
+3 -
+	O Dijkstra não funciona muito bem com arestas negativas,
+	se o grafo tiver arestas negativas ele não vai retornar o menor caminho
+	mas se o grafo tiver um ciclo negativo, não vai existir menor caminho.
+
+	Se a preocupação for rodar eternamente, não é o caso, 
+	o Dijkstra passa apenas uma vez por cada aresta.
+
+4 -
+	Uma boa estratégia, gulosa e que funciona, é resolver assim:
+	
+	Começa-se pelo 2, guarda essa variavel denominador
+	Enquanto o numerador da fração for diferente de 1:
+		Se a fração é maior que 1 sobre denominador:
+			Subtrai-se o valor da fração atual por 1/denominador
+			e guarda-se 1/denominador numa lista de denominadores resultado
+		denominador acrescenta mais um
+	Por fim, depois do while, adiciona o ultimo fator, o valor atual da fração
+
+	É garantido que ela retorna sempre o menor número de parcelas,
+	porque se eu parti do 2 e fui aumentando, as minhas parcelas são as maiores possíveis
+	É garantido que ela funciona porque ela passa por todas as parcelas possíveis
+
+	Resta definir como trabalhar com a fração para verificar se fração é maior que 1/denominador
+	Uma das soluções possiveis é com a fração e o denominador, ver
+	se o numerador da fração é maior que o denominador da função dividido pelo atual denominador
+	Porém a divisão dos denominadores pode não ser inteira, nesse caso, verifique se 
+	eu multiplicar a função pelo denominador atual, o valor da fração é maior que 1/denominador
+	se não for, simplesmente continua-se com o mesmo
+	se for, use a nova fração
+
+5 -
+	A estratégia gulosa de resolver o problema das moedas é simples
+
+	Dado um troco T, divida-o pelo maior valor das moedas
+	guarde o resultado como a quantidade dessas moedas no troco
+	coloque o resto da divisão no valor do troco, 
+	e execute com o segundo maior valor
+	[fazer isso para todos os valores de moedas]
+
+	É uma estratégia rápida e facil, que vai retornar uma solução correta
+	mas, não é necessariamente a menor quantidade de moedas.
+
+	Pegue o exemplo do problema, de 1, 15 e 20 como moedas possíveis,
+	se eu vou pegar o troco de 30, vou acabar escolhendo 1 de 20 e 10 de 1,
+	enquanto que poderia ter pegado 2 de 15.
+
+6 -
+	Um bom modo de resolver o problema do menor caminho em Dijkstra
+	é enquanto se faz o código normal, guardar quem é o atual pai dele
+	sendo esse pai, o vertice que veio logo antes dele, e o fez mudar o custo
+	toda vez que o custo muda.
+	E sempre que for pedido o menor caminho para um vertice v, ir recursivamente
+	pegando de v, o pai dele, o pai do pai... até o o vertice origem u.
+
+/////////////////////////////////////////////////////////////////////////////////////////
+
+	Dado um grafo G, e vértices U e V, origem e destino, do menor caminho
+	Anote o custo para todos os vértices como sendo infinito
+
+	Então anote o custo para o vértice U como sendo 0, marque-o
+	e por fim, anote como sendo seu pai, ele mesmo
+
+	Para todo vértice A adjacente de U:
+		Anote-os como sendo seu pai, o vértice U
+		e o seu respectivo custo como sendo o custo de U para A
+		Coloque na lista de próximos vértices, com seu custo atual
+
+	Para cada vértice A da lista de próximos vértices, priorizando menor custo atual:
+		Se ele estiver marcado:
+			Ignore a iteração
+			//significa que existe aresta negativa
+
+		Marque-o
+
+		Se o vértice A for igual a V, o vertice destino:
+			Guarde os vertices de todos os pais até U
+			"Entregue" esses vertices de forma inversa //já que guardou de V->U e não U->V
+			e "Entregue" o custo atual de A
+
+		Para todo vertice B adjacente de A:
+			Se B tiver pai:
+				Se o custo de A para B for menor que o custo atual de B:
+					Anote A como sendo pai de B
+					Anotar seu custo atual como sendo o custo de A-B mais o custo de A
+			Senão
+				Anote A como sendo pai de B
+				Anotar seu custo atual como sendo o custo de A-B mais o custo de A
+				Coloque-o na lista de próximos vertices, com seu custo atual
+	
+	Se o código chegar nesse ponto, não existe caminho de U para V,
+	pode-se enviar qualquer mensagem relacionada a isso.

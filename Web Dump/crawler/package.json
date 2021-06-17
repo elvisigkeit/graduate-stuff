@@ -1,0 +1,19 @@
+{
+  "name": "fluxoaranhas",
+  "version": "1.0.0",
+  "description": "Crawlers que pegam os sites da UFRJ e inferem as matérias dos cursos",
+  "repository": "https://github.com/elvismdnin/fluxograma",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "main": "server.js",
+  "author": "Elvis",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "cheerio": "^0.19.0",
+    "express": "^4.16.2",
+    "request": "^2.65.0",
+    "request-promise": "^4.2.2",
+    "url-parse": "^1.0.5"
+  }
+}

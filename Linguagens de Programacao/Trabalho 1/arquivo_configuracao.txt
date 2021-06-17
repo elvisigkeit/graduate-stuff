@@ -1,0 +1,5 @@
+#Arquivo de configuração
+#Lista de emails da Blacklist
+aeiou@aiueo.com
+#Limite de palavras chave
+3

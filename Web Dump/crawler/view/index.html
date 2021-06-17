@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="application/javascript" src="js/randomColor.js"></script>
+  <script type="application/javascript" src="js/ajaxFluxo.js"></script>
+  <script type="application/javascript" src="js/renderFluxo.js"></script>
+  <script type="application/javascript" src="js/interaction.js"></script>
+  <script type="application/javascript" src="js/ajaxLista.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/screen.css">
+  <link rel="stylesheet" media="(min-width:640px)" type="text/css" href="css/wide.css">
+  <link rel="stylesheet" media="(max-width:640px)" type="text/css" href="css/phone.css">
+</head>
+
+<body>
+  <div class="navbar">
+    <h2>Fluxogramas</h2>
+    <select id="lista" onchange="selectTrigger()">
+      <option value=""></option>
+    </select>
+  </div>
+  <div class="tela">
+    <div id="fluxograma"/>
+    <div class="loader">
+  </div>
+</body>

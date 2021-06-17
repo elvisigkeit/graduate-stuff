@@ -1,0 +1,51 @@
+1 - 
+	Pegue um vértice V qualquer
+	Coloque-o na raiz da árvore e defina ele mesmo como seu pai
+	Marque-o
+
+	Para cada vizinho de V:
+		Coloque numa pilha de adjacentes P
+		Defina pai de V como sendo a raiz da árvore
+	
+	Para cada vértice T do topo da pilha P:
+		Se T não estiver marcado:
+			Marque-o
+			Crie um nó na arvore filho de seu pai
+			Para cada vértice adjacente A:
+				Se A não tiver pai:
+					Defina pai de A como sendo T
+					Coloque na pilha de adjacentes P
+
+	Retorne a árvore
+
+2 -
+	//Ser ponte significa não estar num ciclo
+	Pegue um vértice V qualquer
+	Anotar a si mesmo como low
+	Anotar o grau de entrada como sendo 1
+	Setar o grau de entrada 'global' como 2
+
+	Para cada vizinho A de V:
+		Visita_Vertice(V, A, grau_entrada, Aresta entre A e V)
+	
+
+
+
+Visita_Vertice(Vertice Pai, Vertice V, grau_entrada, Aresta A):
+	Se V já tiver grau de entrada:
+		Marca A como não ponte
+		Se low do Pai tiver grau de entrada maior:
+			Anota novo low como sendo V
+		Fecha funcao
+	
+	Anota o grau de entrada atual como sendo grau_entrada
+	Soma 1 no grau_entrada
+	Anota a si mesmo como sendo low
+
+	Para cada vizinho P de V:
+		Visita_Vertice(V, P, grau_entrada, Aresta entre P e V)
+		Se low do filho tiver grau de entrada menor:
+			Recebe o low do filho
+
+	Se low atual for diferente de V:
+		Marca A como não ponte

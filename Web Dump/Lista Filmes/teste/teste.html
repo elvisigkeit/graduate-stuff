@@ -1,0 +1,52 @@
+<head>
+<script src="https://d3js.org/d3.v4.min.js" charset="utf-8"></script>
+<style>
+svg {
+  opacity: 0.3;
+  width: 200px;
+  position: absolute;
+}
+
+.loader-out {
+  stroke-dasharray: 33;
+  stroke-dashoffset: 0;
+  stroke: rgba(0,0,0,1);
+  stroke-linecap: round;
+  animation: rotate-out 1s linear infinite;
+}
+
+.loader-in {
+  stroke-dasharray: 25;
+  stroke-dashoffset: 20;
+  stroke: rgba(0,0,0,0.6);
+  stroke-linecap: round;
+  animation: rotate-in 1s linear infinite;
+}
+
+@keyframes rotate-in {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotate-out {
+  0% {
+    transform: rotate(360deg);
+  }
+}
+
+</style>
+</head>
+<body>
+  <div id="wrapper">
+
+  <div class="profile-main-loader">
+    <div class="loader">
+      <svg class="circular-loader" viewBox="-25 -25 100 100">
+        <circle r="20" fill="none" stroke-width="2" class="loader-out" cx="0" cy="0"></circle>
+        <circle fill="none" stroke-width="2" r="16" class="loader-in" cy="0" cx="0"></circle>
+      </svg>
+    </div>
+  </div>
+
+  </div>
+</body>

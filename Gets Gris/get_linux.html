@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<title>GET-LINUX</title>
+<style>
+h1{
+  text-align: center;
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+}
+
+div {
+  margin-top: 15px;
+  grid-column-start: 2;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px 10px 10px 10px;
+  cursor: pointer;
+}
+
+div:hover .resposta{
+  height: 120px;
+  opacity: 1;
+}
+
+div .resposta{
+  height: 0px;
+  opacity: 0;
+  transition: height 0.5s, opacity 0.5s;
+}
+
+.resposta7{
+  display: grid;
+  margin-left: -40px;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 10px;
+}
+
+li .descricao {
+  grid-column-start: 2;
+  grid-row-start: 1;
+}
+
+li .item {
+  grid-column-start: 1;
+  grid-row-start: 1;
+}
+</style>
+</head>
+<body>
+<h1>GET-LINUX</h1>
+<div>
+1. Explique com suas palavras o que faz o comando utilizado para instalar o Arch Linux
+“arch-chroot”.
+<div class="resposta">O comando [arch-chroot] mantém as configurações e abre um shell que
+simula um sistema começado na pasta escolhida, ele abre um shell que acredita que o '/'
+do sistema de arquivos está na pasta do comando aberto.</div></div>
+<div>
+2. Como funciona o comando do terminal sudo?
+<div class="resposta">Basicamente ele cria uma instancia do bash e seta uid do usuário
+para executar um código que é recebido de entrada. Fazendo isso, ele pode fazer o programa
+acreditar que ele tem os direitos de root, sem sair ou trocar o usuário.</div></div>
+<div>
+3. Em um servidor web precisou-se dar acesso para que um usuário execute seus arquivos “.php”
+em sua pasta public_html, qual a permissão mais restritiva em que ele possa fazer isso? E da
+pasta onde ele está? (OBS: servidor web é um outro usuário no Linux).
+<div class="resposta">Admitindo que o usuário servidor precise de todo acesso
+a permissão mais restritiva seria a <b>701</b>, que liberaria o usuário de fora do grupo execute o .php.<br>
+Já da pasta, na mesma ideia, o usuário de fora teria que ter direito a executar para abrir a pasta,
+e direito de ler, para ver o .php que está dentro dela, logo <b>705</b>, o padrão das pastas.<br>
+Admite-se que o dono das pastas é o usuário servidor local.</div></div>
+<div>
+4. Detalhe 3 Shell’s e suas respectivas diferenças.
+<div class="resposta">
+<ol style="margin-top: -8px;">
+  <li>BASH: Bourne-Again Shell, o shell padrão do GNU, ele é simples e poderoso.
+ Você sempre pode contar com ele.</li>
+  <li>ZSH: Baseado em BASH com inclusão de algumas features como modificar o texto
+  vim-like e autocomplete muito esperto.</li>
+  <li>CSH: A intenção era fazer um shell onde os scripts parecessem mais com C, o
+    que os torna mais legíveis.</li>
+</ol></div></div>
+<div>
+5. Qual a diferenças entre um serviço no Linux e um processo?
+<div class="resposta">Um serviço é um pacote completo que resolve algum problema.
+Um webserver é um serviço, ele serve páginas web.<br>Um processo, por outro lado, é
+uma abstração em cima de um código, feita pelo OS, que tem variáveis de ambiente.
+É criado com a execução de um código.<br>
+Um serviço pode ter vários processos.</div></div>
+<div>
+6. Por que é errado chamar o Linux de Sistema Operacional?
+<div class="resposta">Porque o Linux é o kernel, a parte que resolve uma parte dos
+problemas que um OS se propõe a resolver. OS são as distribuições do linux, que
+trazem vários modos de interagir com o computador através do kernel.</div></div>
+<div>
+7. Para que servem as entradas na árvore de diretórios do Linux:
+<ol type="a">
+<li class="resposta7"><div class="item">/dev/stdout</div>
+  <div class="descricao">O arquivo que representa a saída padrão do terminal</div></li>
+<li class="resposta7"><div class="item">/tmp/.X11-unix</div>
+  <div class="descricao">Pasta de sockets, que representam as relações dos programas no sistema
+  com o server X, server de aplicações gráficas.</div></li>
+<li class="resposta7"><div class="item">/proc/cpuinfo</div>
+  <div class="descricao">O arquivo com as descrições de cada um dos cores do processador.</div></li>
+<li class="resposta7"><div class="item">/etc/shadow</div>
+  <div class="descricao">O arquivo que guarda criptografadas todas as senhas dos usuários.</div></li>
+<li class="resposta7"><div class="item">/var/spool</div>
+  <div class="descricao">Pasta onde são guardadas as coisas que estão em fila para serem entregadas,
+  como emails ou documentos para impressão</div></li>
+<li class="resposta7"><div class="item">/etc/fstab</div>
+  <div class="descricao">Arquivo com definições dos sistemas de arquivos montados ao iniciar</div></li></ol></div>
+<div>
+8. Qual a diferença entre o /tmp/.X11-unix para as outras entradas?
+<div class="resposta">A pasta do X11 tem vários sockets, que são arquivos de interface,
+eles não são arquivos, como os outros, eles são descritores de regras de negócio.</div></div>
+<div>
+9. O que são links no Linux? E qual(is) a(s) diferença(s) entre um hard link e um soft link?
+<div class="resposta">Links são modos de relacionar arquivos no sistema de arquivos ligando-os.
+O hard link aponta para o arquivo em si, no hd. O soft link aponta para o descritor do arquivo.
+Mudanças no nome do arquivo quebram o soft link, e não o hard.</div></div>
+<div>
+10. Por que ao se ligar um dispositivo periférico a um sistema computacional com Linux ele deve ser
+montado para poder ser utilizado?
+<div class="resposta">Para que o sistema saiba como lidar com o arquivo, já que o dispositivo periférico
+vem como um arquivo. Ele poderia ser qualquer coisa, ao montar dizemos o que ele é e como usaremos.</div></div>
+<div>
+11. Qual a função da variável de ambiente PATH?
+<div class="resposta">A variável PATH descreve os caminhos onde procurar os programas que são acessíveis
+diretamente do shell. Ela pode ser usada para definir um local padrão novo, de programas, ao se dar export.</div></div>
+<div>
+12. Quais as vantagens de se colocar o diretório /home em uma outra partição separada do “/” ?
+<div class="resposta">Se eu tiver o /home separado do / eu posso fazer um sistema de arquivos em rede
+e colocar a pasta de configurações de cada usuário acessível a várias máquinas diferentes.</div></div>
+<div>
+13. O que são os sistemas de init? Quais as diferenças entre o sysvinit e o systemd?
+<div class="resposta">init é um sistema que gerencia os serviços através de scripts
+feitos em bash, e executados com alguns comandos específicos. O systemd tem a intenção de melhorar
+esse processo usando, além de outras estratégias, um modo próprio de fazer esses scripts e mostrando os serviços
+em interfaces mais trabalhadas.</div></div>
+<div>
+14. Pra que servem as flags especiais de permissão do Linux setuid, setgid e sticky bit?
+<div class="resposta">
+<ol style="margin-top: -8px;">
+  <li>SetUID: é um sinalizador de direito que define se você pode executar determinado arquivo
+  com permissões de outro usuário.</li>
+  <li>SetGID: é quase a mesma coisa do de cima, só que define se voce pode executar como outro grupo.</li>
+  <li>Sticky Bit: é um indicador que diz o que for feito a partir dali carregará suas permissões,
+  muito útil para diretórios, onde você deixa o usuário criar, mas, mexer apenas nas suas coisas.</li>
+</ol></div></div>
+
+</body>

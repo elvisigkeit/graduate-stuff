@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Cash-E</string>
+    <string name="action_settings">Settings</string>
+    <string name="widget_debt">Debt</string>
+    <string name="sum_100">+100</string>
+    <string name="sum_10">+10</string>
+    <string name="sub_100">-100</string>
+    <string name="sub_10">-10</string>
+    <string name="add_widget">Add widget</string>
+    <string name="empty_not_saved">Please insert an expense</string>
+</resources>
